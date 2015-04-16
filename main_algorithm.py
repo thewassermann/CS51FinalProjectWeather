@@ -1,1 +1,1 @@
-class Algorithm:
+class main_algorithm:
