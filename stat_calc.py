@@ -11,6 +11,7 @@ class stat_calc:
 
 	def get_variation (self):
 		'exposes variation'
+		'oi'
 
 
 
