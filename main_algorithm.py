@@ -23,6 +23,8 @@ class main_algorithm:
 	def get_VP (self) :
 		'expose VP'
 
+		'im a massive nerd'
+
 
 
 
