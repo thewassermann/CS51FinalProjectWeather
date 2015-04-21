@@ -12,9 +12,6 @@ class stat_calc:
 
 	def get_variation (self):
 		'exposes variation'
-		'oi'
-
-
 
 	'the below methods are for use in examining trends'
 	def variance( lst , unbiased) :
@@ -34,18 +31,15 @@ class stat_calc:
 
 	def pmcc (lst1, lst2) :
 		' Takes in two lists, calculates the correlation coefficient between them'
-		s1 = math.sqrt(variance(lst1))
-		s2 = math.sqrt(variance(lst2))
+		s1 = math.sqrt(abs(variance(lst1, False)))
+		s2 = math.sqrt(abs(variance(lst2, False)))
 		N = len(lst1)
 		avg1 = sum(lst1) * 1.0 / N
 		avg2 = sum(lst2) * 1.0 / N
 		epsilon = map(lambda x, y: (x - avg1)*(y - avg2), lst1, lst2)
- 		covariance = sum(epsilon) * 1.0 / N - 1 
+ 		covariance = sum(epsilon) * 1.0 / N
 		
-		return (s1*s2)/covariance
-
-
-		'question: should this output a list or a value?'
+		return covariance/(s1*s2)
 
 
 
