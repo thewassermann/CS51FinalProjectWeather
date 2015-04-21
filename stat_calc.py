@@ -13,6 +13,7 @@ class stat_calc:
 	def get_variation (self):
 		'exposes variation'
 
+
 	'the below methods are for use in examining trends'
 	def variance( lst , unbiased) :
 		' Calculates the variance of a list of objects'
