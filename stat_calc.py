@@ -9,10 +9,11 @@ class stat_calc:
 
 	def variation_helper(self) :
 		'calls mean_matrix on VC and VP and gives variation'
+		return (mean_matrix(self,VC) + mean_matrix(self,VP) * 1.0)/ 2
 
 	def get_variation (self):
 		'exposes variation'
-
+		return variation_helper(self)
 
 	'the below methods are for use in examining trends'
 	def variance( lst , unbiased) :
