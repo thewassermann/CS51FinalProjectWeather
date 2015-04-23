@@ -37,12 +37,12 @@ class main_algorithm:
 	def variation_vector (self, matrix) :
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
-		flat_matrix = matrix.flatten('F') 
-		data_list = flat_matrix.to_list()
-		split_list = for i in xrange(0, len(data_list), 7) : yield l[i:i+7]
-        prcp_list = split_list[0]
-        tmax_list = split_list[1]
-        tmin_list = split_list[2]
+		column_array = np.hsplit(matrix, 1)
+		column_list = np.flatten(column_array) 
+
+        prcp_list = np.flatten(column_list[0])
+        tmax_list = np.flatten(column_list[1])
+        tmin_list = np.flatten(column_list[2])
 
         prcp_list_helper = [0] + prcp_list[0:6]
         tmax_list_helper = [0] + tmax[0:6]
