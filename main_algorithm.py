@@ -34,7 +34,7 @@ class main_algorithm:
 
 	def sub(x,y): return x - y
 
-	def variation_vector (self, matrix) :
+	def variation_vector (self, matrix, return_vector) :
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
 		column_array = np.hsplit(matrix, 1)
@@ -52,14 +52,14 @@ class main_algorithm:
         var_tmax = map(sub, tmax_list, tmax_list_helper)
         var_tmin = map(sub, tmin_list, tmin_list_helper)
 
-
-	def get_VC (self) :
-		'expose VC'
-
-	def get_VP (self) :
-		'expose VP'
-
-		'im a massive nerd'
+        if return_vector = "prcp" :
+        	return var_prcp
+        elif return_vector = "tmax" :
+        	return var_tmax
+        elif return_vector = "tmin" :
+        	return var_tmin 
+        else :
+        	print "Invalid, ya done fucked up" 
 
 
 
