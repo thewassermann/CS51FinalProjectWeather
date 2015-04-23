@@ -1,11 +1,8 @@
 'bulk of the algorithm is computed here'
 from weather_data import get_CD, get_PD
-<<<<<<< Updated upstream
-import numpy as np
-=======
-import numpy
 
->>>>>>> Stashed changes
+import numpy as np
+
 class main_algorithm:
 
 	def sliding_windows (self, PD) :
@@ -30,7 +27,7 @@ class main_algorithm:
 	def variation_vector (self, matrix) :
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
-		flat_matrix = matrix.flatten('C') 
+		flat_matrix = matrix.flatten('F') 
 		data_list = flat_matrix.to_list()
 		split_list = 
 			for i in xrange(0, len(data_list), 7):
