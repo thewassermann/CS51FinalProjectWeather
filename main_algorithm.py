@@ -11,7 +11,7 @@ class main_algorithm:
 		# Ok here's how we'll do this
 		# PD should be in the form of a 14 x 4 matrix already SO
 		w = []
-		for i in xrange (0, 8)
+		for i in xrange (0, 8) :
 			w.append(np.vstack((PD[i],PD[i+1],PD[i+2],PD[i+3],PD[i+4],PD[i+5],PD[i+6])))
 		return w
 
@@ -19,16 +19,17 @@ class main_algorithm:
 		'uses iterative process to compute euclidian distance of each sliding window with CD'
 		'present as list'
 		ed = []
-		flat_cd = CD.flatten()
-		for i in xrange(0, 8)
-			a = w[i].flatten()
-			ed.append(np.linalg.norm(flat_cd - a))
+		for i in xrange(0, 8) :
+			ed.append(np.linalg.norm(CD - w[i]))
 		return ed
 
 
-	def select_matrix (self, euc_list) :
+	def select_matrix (self, w, euc_list) :
 		'Wi = Corresponding_Matrix(Min.(euc_distancei))'
 		'for each matrix'
+		i = min(euc_list)
+		return w[i]
+
 		
 
 	def sub(x,y): return x - y
@@ -38,9 +39,7 @@ class main_algorithm:
 		' a 6 x 4 matrix, and produce a function that can parse this'
 		flat_matrix = matrix.flatten('F') 
 		data_list = flat_matrix.to_list()
-		split_list = 
-			for i in xrange(0, len(data_list), 7):
-        		yield l[i:i+7]
+		split_list = for i in xrange(0, len(data_list), 7) : yield l[i:i+7]
         prcp_list = split_list[0]
         tmax_list = split_list[1]
         tmin_list = split_list[2]
