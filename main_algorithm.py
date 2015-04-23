@@ -10,17 +10,25 @@ class main_algorithm:
 		'present them as a list'
 		# Ok here's how we'll do this
 		# PD should be in the form of a 14 x 4 matrix already SO
-		W = []
-		For i in range (0, 8)
-			W.append(np.vstack((PD[i],PD[i+1],PD[i+2],PD[i+3],PD[i+4],PD[i+5],PD[i+6])))
+		w = []
+		for i in range (0, 8)
+			w.append(np.vstack((PD[i],PD[i+1],PD[i+2],PD[i+3],PD[i+4],PD[i+5],PD[i+6])))
+		return w
 
-	def euc_distance (self, CD) :
+	def euc_distance (self, w, CD) :
 		'uses iterative process to compute euclidian distance of each sliding window with CD'
 		'present as list'
+		ed = []
+		for i in range (0, 8)
+			d = 0
+			for j in range (0, 4)
+				(w[i] - CD[i])
+
 
 	def select_matrix (self, euc_list) :
 		'Wi = Corresponding_Matrix(Min.(euc_distancei))'
 		'for each matrix'
+		
 
 	def sub(x,y): return x - y
 
