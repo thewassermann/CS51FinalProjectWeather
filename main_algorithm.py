@@ -1,9 +1,8 @@
 'bulk of the algorithm is computed here'
-<<<<<<< HEAD
 # from weather_data import get_CD, get_PD
-=======
-#from weather_data import get_CD, get_PD
->>>>>>> origin/master
+
+
+
 
 import numpy as np
 
@@ -38,14 +37,14 @@ class MainAlgorithm:
 
 	def sub(x,y): return x - y
 
-	'''def variation_vector (self, matrix, return_vector) :
+	def variation_vector (self, matrix, return_vector) :
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
 		column_array = np.hsplit(matrix, 1)
 
-        prcp_list = column_array[0].flatten()
-        tmax_list = column_array[1].flatten()
-        tmin_list = column_array[2].flatten()
+        prcp_list = column_array[0].tolist()
+        tmax_list = column_array[1].tolist()
+        tmin_list = column_array[2].tolist()
 
         prcp_list_helper = [0] + prcp_list[0:6]
         tmax_list_helper = [0] + tmax[0:6]
@@ -63,7 +62,7 @@ class MainAlgorithm:
         	print var_tmin 
         else :
         	print "Invalid, ya done fucked up" 
-'''
+
 
 
 
