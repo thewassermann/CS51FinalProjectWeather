@@ -52,12 +52,12 @@ class main_algorithm:
         var_tmax = map(sub, tmax_list, tmax_list_helper)
         var_tmin = map(sub, tmin_list, tmin_list_helper)
 
-        if return_vector = "prcp" :
-        	return var_prcp
-        elif return_vector = "tmax" :
-        	return var_tmax
-        elif return_vector = "tmin" :
-        	return var_tmin 
+        if return_vector is "prcp" :
+        	print var_prcp
+        elif return_vector is "tmax" :
+        	print var_tmax
+        elif return_vector is "tmin" :
+        	print var_tmin 
         else :
         	print "Invalid, ya done fucked up" 
 
