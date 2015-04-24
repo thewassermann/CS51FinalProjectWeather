@@ -14,3 +14,18 @@ b = w.make_PD('PD.csv')
 
 print a
 print b
+
+from main_algorithm import MainAlgorithm
+
+m = MainAlgorithm()
+
+win = m.sliding_windows(b)
+
+disList = m.euc_distance(win,a)
+
+sel = m.select_matrix(win,disList)
+
+print m
+print win
+print disList
+print sel

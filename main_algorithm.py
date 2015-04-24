@@ -1,9 +1,13 @@
 'bulk of the algorithm is computed here'
+<<<<<<< HEAD
 # from weather_data import get_CD, get_PD
+=======
+#from weather_data import get_CD, get_PD
+>>>>>>> origin/master
 
 import numpy as np
 
-class main_algorithm:
+class MainAlgorithm:
 
 	def sliding_windows (self, PD) :
 		'uses iterative process to create 8 sliding windows from PD'
@@ -34,7 +38,7 @@ class main_algorithm:
 
 	def sub(x,y): return x - y
 
-	def variation_vector (self, matrix, return_vector) :
+	'''def variation_vector (self, matrix, return_vector) :
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
 		column_array = np.hsplit(matrix, 1)
@@ -59,7 +63,7 @@ class main_algorithm:
         	print var_tmin 
         else :
         	print "Invalid, ya done fucked up" 
-
+'''
 
 
 
