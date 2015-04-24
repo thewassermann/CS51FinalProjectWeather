@@ -27,11 +27,12 @@ class MainAlgorithm:
 	def select_matrix (self, w, euc_list) :
 		'Wi = Corresponding_Matrix(Min.(euc_distancei))'
 		'for each matrix'
-		i = min(euc_list)
-		return w[i]
+		m = min(euc_list)
+		index = [i for i, j in enumerate(euc_list) if j == m]
+		return w[index[0]]
 
 		
-
+'''
 	def sub(x,y): return x - y
 
 	def variation_vector (self, matrix, return_vector) :
@@ -60,3 +61,4 @@ class MainAlgorithm:
         else :
         	print "Invalid, ya done fucked up" 
 
+'''

@@ -12,7 +12,9 @@ w = WeatherData()
 a = w.make_CD('CD.csv')
 b = w.make_PD('PD.csv')
 
+print "CD :"
 print a
+print "PD :"
 print b
 
 from main_algorithm import MainAlgorithm
@@ -25,7 +27,9 @@ disList = m.euc_distance(win,a)
 
 sel = m.select_matrix(win,disList)
 
-print m
+print "Sliding Windows :"
 print win
+print "Euclidian Distances :"
 print disList
+print "Closest Matrix :"
 print sel
