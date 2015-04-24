@@ -1,5 +1,5 @@
 'bulk of the algorithm is computed here'
-from weather_data import get_CD, get_PD
+# from weather_data import get_CD, get_PD
 
 import numpy as np
 
@@ -38,11 +38,10 @@ class main_algorithm:
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
 		column_array = np.hsplit(matrix, 1)
-		column_list = np.flatten(column_array) 
 
-        prcp_list = np.flatten(column_list[0])
-        tmax_list = np.flatten(column_list[1])
-        tmin_list = np.flatten(column_list[2])
+        prcp_list = column_array[0].flatten()
+        tmax_list = column_array[1].flatten()
+        tmin_list = column_array[2].flatten()
 
         prcp_list_helper = [0] + prcp_list[0:6]
         tmax_list_helper = [0] + tmax[0:6]
