@@ -1,9 +1,6 @@
 'bulk of the algorithm is computed here'
 # from weather_data import get_CD, get_PD
 
-
-
-
 import numpy as np
 
 class MainAlgorithm:
@@ -63,10 +60,3 @@ class MainAlgorithm:
         else :
         	print "Invalid, ya done fucked up" 
 
-
-
-
-
-
-
-	
