@@ -37,7 +37,7 @@ class MainAlgorithm:
 	def variation_vector (self, matrix, return_vector) :
 		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 4 matrix, and produce a function that can parse this'
-		column_array = np.hsplit(matrix, 1)
+		column_array = np.hsplit(matrix, 3)
 
         prcp_list = column_array[0].tolist()
         tmax_list = column_array[1].tolist()
