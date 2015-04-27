@@ -32,32 +32,34 @@ class MainAlgorithm:
 		return w[index[0]]
 
 		
-	def sub(x,y): return x - y
-'''
-	def variation_vector (self, matrix, return_vector) :
-		' turns 7 x 4 matrix into 4 6 x 1 matrices. i will represent this as'
-		' a 6 x 4 matrix, and produce a function that can parse this'
+	# def sub(x,y): return x - y
+
+	def variation_vector(self, matrix, return_vector):
+		' turns 7 x 3 matrix into 4 6 x 1 matrices. i will represent this as'
+		' a 6 x 3 matrix, and produce a function that can parse this'
 
 		column_array = np.hsplit(matrix, 3)
 
-        prcp_list = column_array[0].flatten().tolist()
-        tmax_list = column_array[1].flatten().tolist()
-        tmin_list = column_array[2].flatten().tolist()
+		prcp_list = column_array[0].flatten().tolist()
+		tmax_list = column_array[1].flatten().tolist()
+		tmin_list = column_array[2].flatten().tolist()
 
-        prcp_list_helper = [0.] + prcp_list[0:6]
-        tmax_list_helper = [0.] + tmax[0:6]
-        tmin_list_helper = [0.] + tmin_list[0:6]
+		prcp_list_helper = [0.] + prcp_list[0:6]
+		tmax_list_helper = [0.] + tmax_list[0:6]
+		tmin_list_helper = [0.] + tmin_list[0:6]
 
-        var_prcp = map(sub, prcp_list, prcp_list_helper)
-        var_tmax = map(sub, tmax_list, tmax_list_helper)
-        var_tmin = map(sub, tmin_list, tmin_list_helper)
+		var_prcp = map(lambda x, y: x - y, prcp_list, prcp_list_helper)
+		var_tmax = map(lambda x, y: x - y, prcp_list, tmax_list_helper)
+		var_tmin = map(lambda x, y: x - y, prcp_list, tmin_list_helper)
 
-        if (return_vector is "prcp") :
-        	print var_prcp
-        elif (return_vector is "tmax") :
-        	print var_tmax
-        elif (return_vector is "tmin") :
-        	print var_tmin 
-        else :
-        	print "Invalid, ya done fucked up" 
-'''
+		if (return_vector is "prcp") :
+			print var_prcp
+		elif (return_vector is "tmax") :
+			print var_tmax
+		elif (return_vector is "tmin") :
+			print var_tmin 
+		else :
+			print "Invalid, ya done fucked up"
+
+		return None
+

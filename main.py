@@ -33,3 +33,8 @@ print "Euclidian Distances :"
 print disList
 print "Closest Matrix :"
 print sel
+
+testing_main_algorithm = m.variation_vector(sel, None)
+testing_main_algorithm = m.variation_vector(sel, "prcp")
+testing_main_algorithm = m.variation_vector(sel, "tmax")
+testing_main_algorithm = m.variation_vector(sel, "tmin")
