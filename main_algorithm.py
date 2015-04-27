@@ -31,9 +31,6 @@ class MainAlgorithm:
 		index = [i for i, j in enumerate(euc_list) if j == m]
 		return w[index[0]]
 
-		
-	# def sub(x,y): return x - y
-
 	def variation_vector(self, matrix, return_vector):
 		' turns 7 x 3 matrix into 4 6 x 1 matrices. i will represent this as'
 		' a 6 x 3 matrix, and produce a function that can parse this'
@@ -44,20 +41,20 @@ class MainAlgorithm:
 		tmax_list = column_array[1].flatten().tolist()
 		tmin_list = column_array[2].flatten().tolist()
 
-		prcp_list_helper = [0.] + prcp_list[0:6]
-		tmax_list_helper = [0.] + tmax_list[0:6]
-		tmin_list_helper = [0.] + tmin_list[0:6]
+		prcp_list_helper = [0] + prcp_list[0:6]
+		tmax_list_helper = [0] + tmax_list[0:6]
+		tmin_list_helper = [0] + tmin_list[0:6]
 
-		var_prcp = map(lambda x, y: x - y, prcp_list, prcp_list_helper)
-		var_tmax = map(lambda x, y: x - y, prcp_list, tmax_list_helper)
-		var_tmin = map(lambda x, y: x - y, prcp_list, tmin_list_helper)
+		var_prcp = map(lambda x, y: x - y, prcp_list_helper, prcp_list)
+		var_tmax = map(lambda x, y: x - y, tmax_list_helper, tmax_list)
+		var_tmin = map(lambda x, y: x - y, tmin_list_helper, tmin_list)
 
 		if (return_vector is "prcp") :
-			print var_prcp
+			print var_prcp[1:7]
 		elif (return_vector is "tmax") :
-			print var_tmax
+			print var_tmax[1:7]
 		elif (return_vector is "tmin") :
-			print var_tmin 
+			print var_tmin[1:7] 
 		else :
 			print "Invalid, ya done fucked up"
 
