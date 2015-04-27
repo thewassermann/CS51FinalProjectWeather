@@ -34,7 +34,19 @@ print disList
 print "Closest Matrix :"
 print sel
 
-testing_main_algorithm = m.variation_vector(sel, None)
+
+print "precipitation VC :"
+testing_main_algorithm = m.variation_vector(a, "prcp")
+print "tmax VC :"
+testing_main_algorithm = m.variation_vector(a, "tmax")
+print "tmin VC :"
+testing_main_algorithm = m.variation_vector(a, "tmin")
+
+print "\n\n"
+
+print "precipitation VP :"
 testing_main_algorithm = m.variation_vector(sel, "prcp")
+print "tmax VP :"
 testing_main_algorithm = m.variation_vector(sel, "tmax")
+print "tmin VP :"
 testing_main_algorithm = m.variation_vector(sel, "tmin")
