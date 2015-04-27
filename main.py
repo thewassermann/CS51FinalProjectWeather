@@ -14,8 +14,10 @@ b = w.make_PD('PD.csv')
 
 print "CD :"
 print a
+print "\n"
 print "PD :"
 print b
+print "\n"
 
 from main_algorithm import MainAlgorithm
 
@@ -29,16 +31,21 @@ sel = m.select_matrix(win,disList)
 
 print "Sliding Windows :"
 print win
+print "\n"
 print "Euclidian Distances :"
 print disList
+print "\n"
 print "Closest Matrix :"
 print sel
+print "\n"
 
 
 print "precipitation VC :"
 testing_main_algorithm = m.variation_vector(a, "prcp")
+print "\n"
 print "tmax VC :"
 testing_main_algorithm = m.variation_vector(a, "tmax")
+print "\n"
 print "tmin VC :"
 testing_main_algorithm = m.variation_vector(a, "tmin")
 
@@ -46,7 +53,9 @@ print "\n\n"
 
 print "precipitation VP :"
 testing_main_algorithm = m.variation_vector(sel, "prcp")
+print "\n"
 print "tmax VP :"
 testing_main_algorithm = m.variation_vector(sel, "tmax")
+print "\n"
 print "tmin VP :"
 testing_main_algorithm = m.variation_vector(sel, "tmin")
