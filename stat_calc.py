@@ -1,19 +1,18 @@
 ' this class contains the necessary statistical operations for the late stages of the algorithm'
-from main_algorithm import VC, VP
-class stat_calc:
+class StatCalc:
 
 
 	def mean_matrix(self, matrix) :
 		' This calculates the mean of a variance vector VC or VP'
 		return sum(matrix) * 1.0 / len(matrix)
 
-	def variation_helper(self) :
+	def variation_helper(self, VC, VP) :
 		'calls mean_matrix on VC and VP and gives variation'
 		return (mean_matrix(self,VC) + mean_matrix(self,VP) * 1.0)/ 2
 
-	def get_variation (self):
+	def get_variation (self, VC, VP):
 		'exposes variation'
-		return variation_helper(self)
+		return variation_helper(self, VC, VP)
 
 	'the below methods are for use in examining trends'
 	def variance( lst , unbiased) :

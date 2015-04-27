@@ -41,7 +41,8 @@ print "\n"
 
 
 print "precipitation VC :"
-testing_main_algorithm = m.variation_vector(a, "prcp")
+f = m.variation_vector(a, "prcp")
+print f
 print "\n"
 print "tmax VC :"
 testing_main_algorithm = m.variation_vector(a, "tmax")
@@ -59,3 +60,13 @@ testing_main_algorithm = m.variation_vector(sel, "tmax")
 print "\n"
 print "tmin VP :"
 testing_main_algorithm = m.variation_vector(sel, "tmin")
+print "\n"
+
+
+# from stat_calc import StatCalc
+
+# s = StatCalc()
+
+# vprcp = s.get_variation()
+# vtmax = s.get_variation()
+# vtmin
