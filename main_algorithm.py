@@ -50,13 +50,13 @@ class MainAlgorithm:
 		var_tmin = map(lambda x, y: x - y, tmin_list_helper, tmin_list)
 
 		if (return_vector is "prcp") :
-			print var_prcp[1:7]
+			return var_prcp[1:7]
 		elif (return_vector is "tmax") :
-			print var_tmax[1:7]
+			return var_tmax[1:7]
 		elif (return_vector is "tmin") :
-			print var_tmin[1:7] 
+			return var_tmin[1:7] 
 		else :
 			print "Invalid, ya done fucked up"
 
-		return None
+		
 
