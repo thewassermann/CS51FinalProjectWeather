@@ -41,32 +41,40 @@ print "\n"
 
 
 print "precipitation VC :"
-f = m.variation_vector(a, "prcp")
-print f
+pvc = m.variation_vector(a, "prcp")
+print pvc
 print "\n"
 print "tmax VC :"
-testing_main_algorithm = m.variation_vector(a, "tmax")
+xvc = m.variation_vector(a, "tmax")
+print xvc
 print "\n"
 print "tmin VC :"
-testing_main_algorithm = m.variation_vector(a, "tmin")
+nvc = m.variation_vector(a, "tmin")
+print nvc
 
 print "\n\n"
 
 print "precipitation VP :"
-testing_main_algorithm = m.variation_vector(sel, "prcp")
+pvp = m.variation_vector(sel, "prcp")
+print pvp
 print "\n"
 print "tmax VP :"
-testing_main_algorithm = m.variation_vector(sel, "tmax")
+xvp = m.variation_vector(sel, "tmax")
+print xvp
 print "\n"
 print "tmin VP :"
-testing_main_algorithm = m.variation_vector(sel, "tmin")
+nvp = m.variation_vector(sel, "tmin")
+print nvp
 print "\n"
 
 
-# from stat_calc import StatCalc
+from stat_calc import StatCalc
 
-# s = StatCalc()
+s = StatCalc()
 
-# vprcp = s.get_variation()
-# vtmax = s.get_variation()
-# vtmin
+vprcp = s.variation_helper(pvc, pvp)
+print vprcp
+vtmax = s.get_variation(xvc, xvp)
+print vtmax
+vtmin = s.get_variation(nvc, nvp)
+print vtmin
