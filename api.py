@@ -9,7 +9,7 @@ curr_month = now.month
 curr_date = now.day
 
 for x in range(0, 14):
-	concat = str(curr_year - 1) + str(curr_month) + str(curr_date - 7 + x)
+	concat = str(curr_year - 1) + "0" + str(curr_month) + str(curr_date - 7 + x)
 	print concat
 	link = "http://api.wunderground.com/api/8d78dd77ccf83958/history_date/q/MA/Cambridge.json"
 	new_link = link.replace('date', str(concat))
