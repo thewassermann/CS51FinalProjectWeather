@@ -78,3 +78,14 @@ vtmax = s.get_variation(xvc, xvp)
 print vtmax
 vtmin = s.get_variation(nvc, nvp)
 print vtmin
+
+
+#FINAL ANSWER::::
+yestprcp = w.extract_yesterday(a,"prcp")
+yesttmax = (w.extract_yesterday(a,"tmax"))/10.
+yesttmin = (w.extract_yesterday(a,"tmin"))/10.
+
+print "\nTomorrow's Precipitation will be %d cm\n" %yestprcp
+print "\nTomorrow's Max Temp will be %d C\n" %yesttmax
+print "\nTomorrow's Min Temp will be %d C\n" %yesttmin
+
