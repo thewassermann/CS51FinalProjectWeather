@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 
 class WeatherData:        
 
@@ -6,10 +6,10 @@ class WeatherData:
 	# PD_matrix = numpy.empty([16, 5])
 
 	def make_CD (self, csv) :
-		return numpy.genfromtxt(csv, delimiter=',')
+		return np.genfromtxt(csv, delimiter=',')
 
 	def make_PD (self, csv) :
-		return numpy.genfromtxt(csv, delimiter=',')
+		return np.genfromtxt(csv, delimiter=',')
 
 	def get_PD (self) :
 		return self.make_PD
