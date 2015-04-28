@@ -81,9 +81,9 @@ print vtmin
 
 
 #FINAL ANSWER::::
-yestprcp = w.extract_yesterday(a,"prcp")
-yesttmax = (w.extract_yesterday(a,"tmax"))/10.
-yesttmin = (w.extract_yesterday(a,"tmin"))/10.
+yestprcp = w.extract_yesterday(a,"prcp") + vprcp
+yesttmax = (w.extract_yesterday(a,"tmax") + vtmax)/10.
+yesttmin = (w.extract_yesterday(a,"tmin") + vtmin)/10.
 
 print "\nTomorrow's Precipitation will be %d cm\n" %yestprcp
 print "\nTomorrow's Max Temp will be %d C\n" %yesttmax
