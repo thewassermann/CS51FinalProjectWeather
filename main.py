@@ -85,12 +85,14 @@ yestprcp = w.extract_yesterday(a,"prcp") + vprcp
 yesttmax = (w.extract_yesterday(a,"tmax") + vtmax)/10.
 yesttmin = (w.extract_yesterday(a,"tmin") + vtmin)/10.
 
-finalp = "\nTomorrow's Precipitation will be %d cm\n" %yestprcp
-finalx = "\nTomorrow's Max Temp will be %d C\n" %yesttmax
-finaln = "\nTomorrow's Min Temp will be %d C\n" %yesttmin
+finalp = "%d cm" %yestprcp
+finalx = "%d C" %yesttmax
+finaln = "%d C" %yesttmin
 
 print finalp
+print "\n"
 print finalx
+print "\n"
 print finaln
 
 
@@ -130,9 +132,9 @@ contents = '''<!DOCTYPE HTML>
 
 				<!-- Header -->
 					<header id="header">
-						<h1>
-						<p>''' + finalp + '</p><p>' + finalx + '</p><p>' + finaln + '''</p>
-						</h1>
+						<h2>Tomorrow's Precipitation will be :</h2>
+						<h1>''' + finalp + '''</h1><h2>Tomorrow's high will be:</h2>
+						<h1>''' + finalx + '''</h1><h2>Tomorrow's Low will be:</h2><h1>''' + finaln + '''</h1>
 						
 					</header>
 
