@@ -130,7 +130,7 @@ contents = '''<!DOCTYPE HTML>
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Weather Today:
+						<h1>
 						''' + finalp + finalx + finaln + '''
 						</h1>
 						<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
