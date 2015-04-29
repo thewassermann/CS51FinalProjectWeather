@@ -144,7 +144,7 @@ contents = '''<!DOCTYPE HTML>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Hoechst | Wasserman | Cinnamon | Shapiro. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+						<span class="copyright">&copy; Hoechst | Wassermann | Cinnamon | Shapiro. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
 					</footer>
 				
 			</div>

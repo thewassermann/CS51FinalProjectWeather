@@ -8,11 +8,10 @@ now = datetime.datetime.now()
 curr_year = now.year
 curr_month = now.month
 curr_date = now.day
-# PD_matrix
 
 total_list = []
 
-for x in range(0, 2):
+for x in range(0, 7):
 	# if curr_month < 10:
 	# 	if curr_date < 10:
 	# 		concat = str(curr_year - 1) + "0" + str(curr_month) + "0" + str(curr_date - 7 + x)
@@ -50,7 +49,6 @@ for x in range(0, 2):
 
 	print daily_list
 
-	#print PD_matrix
 	print "Max temp is: %s" % (temp_max_10c)
 	print "Min temp is: %s" % (temp_min_10c)
 	print "Precipitation is: %s" % (temp_precip)
