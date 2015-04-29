@@ -73,10 +73,13 @@ from stat_calc import StatCalc
 s = StatCalc()
 
 vprcp = s.variation_helper(pvc, pvp)
+print "Precipitation Variation: "
 print vprcp
 vtmax = s.get_variation(xvc, xvp)
+print "\nHigh Variation: "
 print vtmax
 vtmin = s.get_variation(nvc, nvp)
+print "\nLow Variation: "
 print vtmin
 
 
@@ -89,10 +92,11 @@ finalp = "%d cm" %yestprcp
 finalx = "%d C" %yesttmax
 finaln = "%d C" %yesttmin
 
+print "\nTomorrow's Precipitation: "
 print finalp
-print "\n"
+print "\nTomorrow's High: "
 print finalx
-print "\n"
+print "\nTomorrow's Low: "
 print finaln
 
 
@@ -133,14 +137,14 @@ contents = '''<!DOCTYPE HTML>
 				<!-- Header -->
 					<header id="header">
 						<h2>Tomorrow's Precipitation will be :</h2>
-						<h1>''' + finalp + '''</h1><h2>Tomorrow's high will be:</h2>
+						<h1>''' + finalp + '''</h1><h2>Tomorrow's High will be:</h2>
 						<h1>''' + finalx + '''</h1><h2>Tomorrow's Low will be:</h2><h1>''' + finaln + '''</h1>
 						
 					</header>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+						<span class="copyright">&copy; Hoechst | Wasserman | Cinnamon | Shapiro. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
 					</footer>
 				
 			</div>
