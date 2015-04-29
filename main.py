@@ -85,7 +85,91 @@ yestprcp = w.extract_yesterday(a,"prcp") + vprcp
 yesttmax = (w.extract_yesterday(a,"tmax") + vtmax)/10.
 yesttmin = (w.extract_yesterday(a,"tmin") + vtmin)/10.
 
-print "\nTomorrow's Precipitation will be %d cm\n" %yestprcp
-print "\nTomorrow's Max Temp will be %d C\n" %yesttmax
-print "\nTomorrow's Min Temp will be %d C\n" %yesttmin
+finalp = "\nTomorrow's Precipitation will be %d cm\n" %yestprcp
+finalx = "\nTomorrow's Max Temp will be %d C\n" %yesttmax
+finaln = "\nTomorrow's Min Temp will be %d C\n" %yesttmin
 
+print finalp
+print finalx
+print finaln
+
+
+
+'''A simple program to create an html file froma given string,
+and call the default web browser to display the file.'''
+
+contents = '''<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aerial by HTML5 UP</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Weather Today:
+						''' + finalp + finalx + finaln + '''
+						</h1>
+						<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
+						<nav>
+							<ul>
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+								<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+					</footer>
+				
+			</div>
+		</div>
+	</body>
+</html>
+'''
+
+def main():
+    browseLocal(contents)
+
+def strToFile(text, filename):
+    """Write a file with the given name and the given text."""
+    output = open(filename,"w")
+    output.write(text)
+    output.close()
+
+def browseLocal(webpageText, filename='tempBrowseLocal.html'):
+    '''Start your webbrowser on a local file containing the text
+    with given filename.'''
+    import webbrowser, os.path
+    strToFile(webpageText, filename)
+    webbrowser.open("file:///" + os.path.abspath(filename)) #elaborated for Mac
+
+main()
