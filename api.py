@@ -8,7 +8,9 @@ now = datetime.datetime.now()
 curr_year = now.year
 curr_month = now.month
 curr_date = now.day
-PD_matrix
+# PD_matrix
+
+total_list = []
 
 for x in range(0, 2):
 	# if curr_month < 10:
@@ -35,15 +37,28 @@ for x in range(0, 2):
 
 	parsed_json = json.loads(json_string)
 
-	temp_min = parsed_json['history']['dailysummary'][0]['mintempi']
-	temp_max = parsed_json['history']['dailysummary'][0]['maxtempi']
-	temp_precip = parsed_json['history']['dailysummary'][0]['precipi']
+	temp_min = int(str(parsed_json['history']['dailysummary'][0]['mintempi']))
+	temp_max = int(str(parsed_json['history']['dailysummary'][0]['maxtempi']))
+	temp_precip = float(str(parsed_json['history']['dailysummary'][0]['precipi']))
 
-	new_matrix = array([temp_min, temp_max, temp_precip])
+	temp_min_10c = (50 * (temp_min - 32))/9
+	temp_max_10c = (50 * (temp_max - 32))/9
 
-	print PD_matrix
-	print "Max temp is: %s" % (temp_max)
-	print "Min temp is: %s" % (temp_min)
+	daily_list = [temp_min_10c,temp_max_10c,temp_precip]
+
+	total_list.append(daily_list)
+
+	print daily_list
+
+	#print PD_matrix
+	print "Max temp is: %s" % (temp_max_10c)
+	print "Min temp is: %s" % (temp_min_10c)
 	print "Precipitation is: %s" % (temp_precip)
 
 f.close()
+
+print total_list
+
+total_array = numpy.array(total_list)
+
+print total_array
