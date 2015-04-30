@@ -5,19 +5,31 @@
 # 	def finishing_move (sef, get_variation, prev_day):
 # 			'add variation and prev_day conditions'
 
-from weather_data import WeatherData
+# from weather_data import WeatherData
 
-w = WeatherData()
+# w = WeatherData()
 
-a = w.make_CD('CD.csv')
-b = w.make_PD('PD.csv')
+# a = w.make_CD('CD.csv')
+# b = w.make_PD('PD.csv')
 
-print "CD :"
+# print "CD :"
+# print a
+# print "\n"
+# print "PD :"
+# print b
+# print "\n"
+
+from api import Matrices
+import urllib2
+import json
+import datetime
+
+mat = Matrices()
+
+a = mat.produce("CD")
 print a
-print "\n"
-print "PD :"
+b = mat.produce("PD")
 print b
-print "\n"
 
 from main_algorithm import MainAlgorithm
 
@@ -84,9 +96,36 @@ print vtmin
 
 
 #FINAL ANSWER::::
-yestprcp = w.extract_yesterday(a,"prcp") + vprcp
-yesttmax = (w.extract_yesterday(a,"tmax") + vtmax)/10.
-yesttmin = (w.extract_yesterday(a,"tmin") + vtmin)/10.
+now = datetime.datetime.now()
+curr_year = now.year
+curr_month = now.month
+curr_date = now.day
+
+concat = str(curr_year) + "%02d" % curr_month + "%02d"  % (curr_date - 1)
+link = "http://api.wunderground.com/api/8d78dd77ccf83958/history_date/q/MA/Cambridge.json"
+new_link = link.replace('date', str(concat))
+
+f = urllib2.urlopen(new_link)
+
+json_string = f.read() 
+			 
+
+parsed_json = json.loads(json_string)
+
+temp_min_y = int(str(parsed_json['history']['dailysummary'][0]['mintempi']))
+temp_max_y = int(str(parsed_json['history']['dailysummary'][0]['maxtempi']))
+temp_precip_raw_y = parsed_json['history']['dailysummary'][0]['precipi']
+if temp_precip_raw_y == 'T':
+	temp_precip_y = 0.0
+else:
+	temp_precip_y = float(str(temp_precip_raw_y))
+
+yesttmin = int(((50 * (temp_min_y - 32))/9)/10)
+yesttmax = int(((50 * (temp_max_y - 32))/9)/10)
+yestprcp = int(100*temp_precip_y)
+
+f.close()
+
 
 finalp = "%d cm" %yestprcp
 finalx = "%d C" %yesttmax

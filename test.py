@@ -1,4 +1,7 @@
 from main_algorithm import MainAlgorithm
 m = MainAlgorithm()
 
-print m.variation_vector(None, None)
+from api import Matrices
+a = Matrices()
+
+a.produce("PD")
